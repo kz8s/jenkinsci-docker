@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 
 RUN set -eux &&\
   apt-get update &&\
-  apt-get install -y curl docker git &&\
+  apt-get install -y curl docker-engine git &&\
   rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_HOME /var/jenkins_home
