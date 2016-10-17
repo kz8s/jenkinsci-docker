@@ -5,6 +5,7 @@ RUN set -eux &&\
   echo 'deb http://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/jessie-dockerproject.list &&\
   apt-get update &&\
   apt-get install -y curl docker-engine git &&\
+  apt-get clean &&\
   rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_HOME /var/jenkins_home
