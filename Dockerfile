@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk
 
 RUN set -eux &&\
+  echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list &&\
   apt-get update &&\
   apt-get install -y curl docker-engine git &&\
   rm -rf /var/lib/apt/lists/*
