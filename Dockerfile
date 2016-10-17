@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk
 
 RUN set -eux &&\
-  echo 'deb https://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/jessie-dockerproject.list &&\
+  echo 'deb http://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/jessie-dockerproject.list &&\
   apt-get update &&\
   apt-get install -y curl docker-engine git &&\
   rm -rf /var/lib/apt/lists/*
