@@ -1,6 +1,11 @@
 FROM openjdk:8-jdk
 
-RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+RUN set -eux &&\
+  apt-get update &&\
+  apt-get install -y git curl &&\
+  rm -rf /var/lib/apt/lists/* &&\
+  curl -L https://get.docker.com/builds/Linux/x86_64/docker-latest -o /usr/bin/docker &&\
+  chmod +x /usr/bin/docker
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
