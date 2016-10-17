@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk
 
 RUN set -eux &&\
+  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D &&\
   echo 'deb http://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/jessie-dockerproject.list &&\
   apt-get update &&\
   apt-get install -y curl docker-engine git &&\
